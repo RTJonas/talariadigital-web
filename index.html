@@ -11,19 +11,10 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: {
-                            900: '#0B1628',
-                            800: '#111F38',
-                            700: '#172847',
-                        },
-                        brand: {
-                            cyan: '#2DD4FF',
-                            'cyan-light': '#67E3FF',
-                        }
+                        navy: { 900: '#0B1628', 800: '#111F38', 700: '#172847' },
+                        brand: { cyan: '#2DD4FF', 'cyan-light': '#67E3FF' }
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    }
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
                 }
             }
         }
@@ -36,6 +27,8 @@
         .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(45, 212, 255, 0.1); }
         .btn-glow:hover { box-shadow: 0 0 22px rgba(45, 212, 255, 0.4); }
+        .lang-btn { transition: color 0.15s, border-color 0.15s; }
+        .lang-btn.active { color: #2DD4FF; border-color: #2DD4FF; }
     </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
@@ -47,35 +40,35 @@
                 <img src="assets/img/Talaria_200x200.png" alt="Talaria Digital" class="h-10 w-10 rounded-full">
                 <span class="text-white font-bold text-lg hidden sm:block">Talaria Digital</span>
             </a>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
-                <a href="#servicios" class="hover:text-[#2DD4FF] transition-colors">Servicios</a>
-                <a href="#como-trabajamos" class="hover:text-[#2DD4FF] transition-colors">Metodología</a>
-                <a href="contacto.html" class="hover:text-[#2DD4FF] transition-colors">Contacto</a>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-300">
+                <a href="#servicios" class="hover:text-[#2DD4FF] transition-colors" data-i18n="nav_services">Servicios</a>
+                <a href="#como-trabajamos" class="hover:text-[#2DD4FF] transition-colors" data-i18n="nav_method">Metodología</a>
+                <a href="contacto.html" class="hover:text-[#2DD4FF] transition-colors" data-i18n="nav_contact">Contacto</a>
+                <!-- LANGUAGE SWITCHER -->
+                <div class="flex items-center gap-1 border-l border-white/20 pl-6">
+                    <button onclick="setLang('es')" id="btn-es" class="lang-btn text-xs font-bold px-2 py-1 rounded border border-transparent text-gray-400 hover:text-white">ES</button>
+                    <button onclick="setLang('en')" id="btn-en" class="lang-btn text-xs font-bold px-2 py-1 rounded border border-transparent text-gray-400 hover:text-white">EN</button>
+                    <button onclick="setLang('de')" id="btn-de" class="lang-btn text-xs font-bold px-2 py-1 rounded border border-transparent text-gray-400 hover:text-white">DE</button>
+                </div>
             </nav>
-            <a href="contacto.html" class="btn-glow bg-[#2DD4FF] text-[#0B1628] text-sm font-bold px-5 py-2.5 rounded-lg transition-all">
-                Hablar con un especialista
-            </a>
+            <a href="contacto.html" class="btn-glow bg-[#2DD4FF] text-[#0B1628] text-sm font-bold px-5 py-2.5 rounded-lg transition-all" data-i18n="hero_cta1">Hablar con un especialista</a>
         </div>
     </header>
 
     <!-- HERO -->
     <section class="bg-[#0B1628] text-white py-28 px-6">
         <div class="max-w-5xl mx-auto text-center space-y-8">
-            <p class="text-[#2DD4FF] text-sm font-semibold tracking-widest uppercase">Agencia Boutique B2B &mdash; España &middot; Global</p>
+            <p class="text-[#2DD4FF] text-sm font-semibold tracking-widest uppercase" data-i18n="hero_tag">Agencia Boutique B2B &mdash; España &middot; Global</p>
             <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight">
-                El back-office que tu negocio digital<br class="hidden sm:block">
-                <span class="text-[#2DD4FF] cyan-glow"> necesita para escalar.</span>
+                <span data-i18n="hero_h1a">El back-office que tu negocio digital</span><br class="hidden sm:block">
+                <span class="text-[#2DD4FF] cyan-glow" data-i18n="hero_h1b"> necesita para escalar.</span>
             </h1>
-            <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed" data-i18n="hero_p">
                 Diseñamos e implementamos la infraestructura operativa, financiera y tecnológica para creadores de contenido, marcas personales y empresas digitales que operan en mercados internacionales.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center pt-2">
-                <a href="contacto.html" class="btn-glow bg-[#2DD4FF] text-[#0B1628] font-bold px-8 py-4 rounded-lg text-base transition-all">
-                    Solicitar consulta inicial
-                </a>
-                <a href="mailto:info@talariadigital.es" class="border border-white/20 text-gray-300 hover:border-[#2DD4FF] hover:text-[#2DD4FF] font-semibold px-8 py-4 rounded-lg text-base transition-colors">
-                    info@talariadigital.es
-                </a>
+                <a href="contacto.html" class="btn-glow bg-[#2DD4FF] text-[#0B1628] font-bold px-8 py-4 rounded-lg text-base transition-all" data-i18n="hero_cta1">Solicitar consulta inicial</a>
+                <a href="mailto:info@talariadigital.es" class="border border-white/20 text-gray-300 hover:border-[#2DD4FF] hover:text-[#2DD4FF] font-semibold px-8 py-4 rounded-lg text-base transition-colors">info@talariadigital.es</a>
             </div>
         </div>
     </section>
@@ -84,11 +77,9 @@
     <section class="bg-gray-50 py-16 px-6 border-b border-gray-200">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 text-center md:text-left">
             <div class="flex-1">
-                <p class="text-[#0B1628] font-bold text-2xl leading-snug">
-                    Mientras vos te enfocás en crear y vender, nosotros gestionamos todo lo demás.
-                </p>
+                <p class="text-[#0B1628] font-bold text-2xl leading-snug" data-i18n="value_h">Mientras vos te enfocás en crear y vender, nosotros gestionamos todo lo demás.</p>
             </div>
-            <div class="flex-1 text-gray-500 text-base leading-relaxed">
+            <div class="flex-1 text-gray-500 text-base leading-relaxed" data-i18n="value_p">
                 Operamos como tu departamento de operaciones externo: cobros internacionales, automatizaciones, facturación y presencia digital. Todo trazable, todo bajo cumplimiento europeo.
             </div>
         </div>
@@ -98,50 +89,41 @@
     <section id="servicios" class="py-24 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <p class="text-[#2DD4FF] text-sm font-semibold tracking-widest uppercase mb-3" style="color:#0ea5c9">Servicios Core</p>
-                <h2 class="text-4xl font-bold text-[#0B1628]">Lo que hacemos</h2>
+                <p class="text-sm font-semibold tracking-widest uppercase mb-3" style="color:#0ea5c9" data-i18n="srv_tag">Servicios Core</p>
+                <h2 class="text-4xl font-bold text-[#0B1628]" data-i18n="srv_h">Lo que hacemos</h2>
             </div>
-
             <div class="grid md:grid-cols-2 gap-8">
 
                 <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8">
                     <div class="w-12 h-12 bg-[#0B1628] rounded-xl flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-[#2DD4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
-                        </svg>
+                        <svg class="w-6 h-6 text-[#2DD4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-[#0B1628] mb-3">Arquitecturas de Cobro Internacional</h3>
-                    <p class="text-gray-500 leading-relaxed">Diseñamos e implementamos sistemas de pago multidivisa (EUR, CHF, GBP). Integramos Stripe, BBVA Redsys, Bizum Empresas y Revolut Business con automatización de conciliación y liquidación de honorarios.</p>
+                    <h3 class="text-xl font-bold text-[#0B1628] mb-3" data-i18n="s1_h">Arquitecturas de Cobro Internacional</h3>
+                    <p class="text-gray-500 leading-relaxed" data-i18n="s1_p">Diseñamos e implementamos sistemas de pago multidivisa (EUR, CHF, GBP). Integramos Stripe, BBVA Redsys, Bizum Empresas y Revolut Business con automatización de conciliación y liquidación de honorarios.</p>
                 </div>
 
                 <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8">
                     <div class="w-12 h-12 bg-[#0B1628] rounded-xl flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-[#2DD4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
+                        <svg class="w-6 h-6 text-[#2DD4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-[#0B1628] mb-3">Automatización Operativa</h3>
-                    <p class="text-gray-500 leading-relaxed">Reemplazamos procesos manuales con flujos automatizados vía Make.com y Google Workspace: facturación automática, conciliación bancaria, reportes periódicos y alertas en tiempo real.</p>
+                    <h3 class="text-xl font-bold text-[#0B1628] mb-3" data-i18n="s2_h">Automatización Operativa</h3>
+                    <p class="text-gray-500 leading-relaxed" data-i18n="s2_p">Reemplazamos procesos manuales con flujos automatizados vía Make.com y Google Workspace: facturación automática, conciliación bancaria, reportes periódicos y alertas en tiempo real.</p>
                 </div>
 
                 <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8">
                     <div class="w-12 h-12 bg-[#0B1628] rounded-xl flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-[#2DD4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2"/>
-                        </svg>
+                        <svg class="w-6 h-6 text-[#2DD4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-[#0B1628] mb-3">Presencia Digital y Funnels</h3>
-                    <p class="text-gray-500 leading-relaxed">Creamos webs corporativas y embudos de venta optimizados para conversión en mercados de alto poder adquisitivo (España, Suiza, Reino Unido). Diseño orientado a resultados.</p>
+                    <h3 class="text-xl font-bold text-[#0B1628] mb-3" data-i18n="s3_h">Presencia Digital y Funnels</h3>
+                    <p class="text-gray-500 leading-relaxed" data-i18n="s3_p">Creamos webs corporativas y embudos de venta optimizados para conversión en mercados de alto poder adquisitivo (España, Suiza, Reino Unido). Diseño orientado a resultados.</p>
                 </div>
 
                 <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8">
                     <div class="w-12 h-12 bg-[#0B1628] rounded-xl flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-[#2DD4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                        </svg>
+                        <svg class="w-6 h-6 text-[#2DD4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-[#0B1628] mb-3">Gestión de Campañas Publicitarias</h3>
-                    <p class="text-gray-500 leading-relaxed">Administramos presupuestos en Meta Ads y Google Ads con tarjetas virtuales segregadas por proyecto. Trazabilidad contable total y reporting de rendimiento continuo.</p>
+                    <h3 class="text-xl font-bold text-[#0B1628] mb-3" data-i18n="s4_h">Gestión de Campañas Publicitarias</h3>
+                    <p class="text-gray-500 leading-relaxed" data-i18n="s4_p">Administramos presupuestos en Meta Ads y Google Ads con tarjetas virtuales segregadas por proyecto. Trazabilidad contable total y reporting de rendimiento continuo.</p>
                 </div>
 
             </div>
@@ -152,39 +134,30 @@
     <section id="como-trabajamos" class="bg-[#0B1628] text-white py-24 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <p class="text-[#2DD4FF] text-sm font-semibold tracking-widest uppercase mb-3">Nuestra forma de operar</p>
-                <h2 class="text-4xl font-bold">Cómo trabajamos</h2>
+                <p class="text-[#2DD4FF] text-sm font-semibold tracking-widest uppercase mb-3" data-i18n="how_tag">Nuestra forma de operar</p>
+                <h2 class="text-4xl font-bold" data-i18n="how_h">Cómo trabajamos</h2>
             </div>
-
             <div class="grid md:grid-cols-3 gap-10">
                 <div class="text-center space-y-4">
                     <div class="w-14 h-14 bg-white/5 border border-[#2DD4FF]/25 rounded-2xl flex items-center justify-center mx-auto">
-                        <svg class="w-7 h-7 text-[#2DD4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
+                        <svg class="w-7 h-7 text-[#2DD4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                     </div>
-                    <h3 class="text-lg font-bold">Transparencia y Compliance</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Operamos bajo estándares RGPD europeos. Sin almacenamiento de datos sensibles de pago, con encriptación SSL en todas las operativas.</p>
+                    <h3 class="text-lg font-bold" data-i18n="p1_h">Transparencia y Compliance</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="p1_p">Operamos bajo estándares RGPD europeos. Sin almacenamiento de datos sensibles de pago, con encriptación SSL en todas las operativas.</p>
                 </div>
-
                 <div class="text-center space-y-4">
                     <div class="w-14 h-14 bg-white/5 border border-[#2DD4FF]/25 rounded-2xl flex items-center justify-center mx-auto">
-                        <svg class="w-7 h-7 text-[#2DD4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-                        </svg>
+                        <svg class="w-7 h-7 text-[#2DD4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
                     </div>
-                    <h3 class="text-lg font-bold">Trazabilidad Absoluta</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Cada movimiento financiero está justificado, facturado y respaldado. Infraestructura contable sólida orientada a auditoría y fiscalidad europea.</p>
+                    <h3 class="text-lg font-bold" data-i18n="p2_h">Trazabilidad Absoluta</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="p2_p">Cada movimiento financiero está justificado, facturado y respaldado. Infraestructura contable sólida orientada a auditoría y fiscalidad europea.</p>
                 </div>
-
                 <div class="text-center space-y-4">
                     <div class="w-14 h-14 bg-white/5 border border-[#2DD4FF]/25 rounded-2xl flex items-center justify-center mx-auto">
-                        <svg class="w-7 h-7 text-[#2DD4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
-                        </svg>
+                        <svg class="w-7 h-7 text-[#2DD4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
                     </div>
-                    <h3 class="text-lg font-bold">Soporte Multilingüe</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Atención en Español, Inglés y Alemán. Preparados para operar en mercados europeos y latinoamericanos sin fricción de idioma.</p>
+                    <h3 class="text-lg font-bold" data-i18n="p3_h">Soporte Multilingüe</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="p3_p">Atención en Español, Inglés y Alemán. Preparados para operar en mercados europeos y latinoamericanos sin fricción de idioma.</p>
                 </div>
             </div>
         </div>
@@ -193,9 +166,9 @@
     <!-- MODELO -->
     <section class="py-20 px-6 bg-gray-50 border-y border-gray-200">
         <div class="max-w-4xl mx-auto text-center space-y-6">
-            <p class="text-[#0ea5c9] text-sm font-semibold tracking-widest uppercase">Modelo de colaboración</p>
-            <h2 class="text-3xl font-bold text-[#0B1628]">Alineados con tu éxito</h2>
-            <p class="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
+            <p class="text-[#0ea5c9] text-sm font-semibold tracking-widest uppercase" data-i18n="model_tag">Modelo de colaboración</p>
+            <h2 class="text-3xl font-bold text-[#0B1628]" data-i18n="model_h">Alineados con tu éxito</h2>
+            <p class="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto" data-i18n="model_p">
                 Operamos exclusivamente en modelo B2B con <strong class="text-[#0B1628]">management fees</strong> calculados como porcentaje del volumen de negocio administrado. Sin costes fijos inesperados: crecemos cuando vos crecés.
             </p>
         </div>
@@ -204,15 +177,11 @@
     <!-- CTA FINAL -->
     <section class="py-24 px-6">
         <div class="max-w-3xl mx-auto text-center space-y-7">
-            <h2 class="text-4xl font-bold text-[#0B1628]">¿Listo para delegar la operativa y escalar?</h2>
-            <p class="text-gray-500 text-lg">Contanos tu situación actual. En 48hs te enviamos una propuesta adaptada a tu negocio.</p>
+            <h2 class="text-4xl font-bold text-[#0B1628]" data-i18n="cta_h">¿Listo para delegar la operativa y escalar?</h2>
+            <p class="text-gray-500 text-lg" data-i18n="cta_p">Contanos tu situación actual. En 48hs te enviamos una propuesta adaptada a tu negocio.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="contacto.html" class="btn-glow bg-[#0B1628] text-white font-bold px-8 py-4 rounded-lg text-base hover:bg-[#111F38] transition-all">
-                    Completar formulario de contacto
-                </a>
-                <a href="mailto:info@talariadigital.es" class="border-2 border-[#0B1628] text-[#0B1628] hover:bg-[#0B1628] hover:text-white font-bold px-8 py-4 rounded-lg text-base transition-colors">
-                    Escribir por email directo
-                </a>
+                <a href="contacto.html" class="btn-glow bg-[#0B1628] text-white font-bold px-8 py-4 rounded-lg text-base hover:bg-[#111F38] transition-all" data-i18n="cta_btn1">Completar formulario de contacto</a>
+                <a href="mailto:info@talariadigital.es" class="border-2 border-[#0B1628] text-[#0B1628] hover:bg-[#0B1628] hover:text-white font-bold px-8 py-4 rounded-lg text-base transition-colors" data-i18n="cta_btn2">Escribir por email directo</a>
             </div>
         </div>
     </section>
@@ -222,13 +191,13 @@
         <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-3">
                 <img src="assets/img/Talaria_200x200.png" alt="Talaria Digital" class="h-8 w-8 rounded-full">
-                <p class="text-sm">&copy; 2026 Talaria Digital. Todos los derechos reservados.</p>
+                <p class="text-sm" data-i18n="footer_copy">&copy; 2026 Talaria Digital. Todos los derechos reservados.</p>
             </div>
             <nav class="flex flex-wrap justify-center gap-6 text-sm">
-                <a href="aviso-legal.html" class="hover:text-[#2DD4FF] transition-colors">Aviso Legal</a>
-                <a href="privacidad.html" class="hover:text-[#2DD4FF] transition-colors">Política de Privacidad</a>
-                <a href="cookies.html" class="hover:text-[#2DD4FF] transition-colors">Política de Cookies</a>
-                <a href="condiciones.html" class="hover:text-[#2DD4FF] transition-colors">Términos y Condiciones</a>
+                <a href="aviso-legal.html" class="hover:text-[#2DD4FF] transition-colors" data-i18n="footer_legal">Aviso Legal</a>
+                <a href="privacidad.html" class="hover:text-[#2DD4FF] transition-colors" data-i18n="footer_privacy">Política de Privacidad</a>
+                <a href="cookies.html" class="hover:text-[#2DD4FF] transition-colors" data-i18n="footer_cookies">Política de Cookies</a>
+                <a href="condiciones.html" class="hover:text-[#2DD4FF] transition-colors" data-i18n="footer_terms">Términos y Condiciones</a>
             </nav>
         </div>
     </footer>
@@ -236,18 +205,150 @@
     <!-- COOKIE BANNER -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-[#111F38] border-t border-white/10 text-white p-4 text-sm flex flex-col sm:flex-row justify-between items-center z-50 gap-4">
         <p class="max-w-4xl text-gray-300">
-            Utilizamos cookies técnicas propias para garantizar el correcto funcionamiento del sitio. No utilizamos cookies de terceros ni publicitarias.
-            <a href="cookies.html" class="text-[#2DD4FF] hover:underline ml-1">Política de Cookies</a>
+            <span data-i18n="cookie_text">Utilizamos cookies técnicas propias para garantizar el correcto funcionamiento del sitio. No utilizamos cookies de terceros ni publicitarias.</span>
+            <a href="cookies.html" class="text-[#2DD4FF] hover:underline ml-1" data-i18n="cookie_link">Política de Cookies</a>
         </p>
         <button onclick="document.getElementById('cookie-banner').style.display='none'; localStorage.setItem('cookieAccepted','1')"
-                class="shrink-0 bg-[#2DD4FF] text-[#0B1628] font-bold px-6 py-2 rounded-lg transition-opacity hover:opacity-90">
-            Entendido
-        </button>
+                class="shrink-0 bg-[#2DD4FF] text-[#0B1628] font-bold px-6 py-2 rounded-lg transition-opacity hover:opacity-90"
+                data-i18n="cookie_btn">Entendido</button>
     </div>
+
     <script>
+        // ── TRANSLATIONS ──────────────────────────────────────────────
+        const t = {
+            es: {
+                nav_services: "Servicios", nav_method: "Metodología", nav_contact: "Contacto",
+                hero_tag: "Agencia Boutique B2B — España · Global",
+                hero_h1a: "El back-office que tu negocio digital",
+                hero_h1b: " necesita para escalar.",
+                hero_p: "Diseñamos e implementamos la infraestructura operativa, financiera y tecnológica para creadores de contenido, marcas personales y empresas digitales que operan en mercados internacionales.",
+                hero_cta1: "Solicitar consulta inicial",
+                value_h: "Mientras vos te enfocás en crear y vender, nosotros gestionamos todo lo demás.",
+                value_p: "Operamos como tu departamento de operaciones externo: cobros internacionales, automatizaciones, facturación y presencia digital. Todo trazable, todo bajo cumplimiento europeo.",
+                srv_tag: "Servicios Core", srv_h: "Lo que hacemos",
+                s1_h: "Arquitecturas de Cobro Internacional",
+                s1_p: "Diseñamos e implementamos sistemas de pago multidivisa (EUR, CHF, GBP). Integramos Stripe, BBVA Redsys, Bizum Empresas y Revolut Business con automatización de conciliación y liquidación de honorarios.",
+                s2_h: "Automatización Operativa",
+                s2_p: "Reemplazamos procesos manuales con flujos automatizados vía Make.com y Google Workspace: facturación automática, conciliación bancaria, reportes periódicos y alertas en tiempo real.",
+                s3_h: "Presencia Digital y Funnels",
+                s3_p: "Creamos webs corporativas y embudos de venta optimizados para conversión en mercados de alto poder adquisitivo (España, Suiza, Reino Unido). Diseño orientado a resultados.",
+                s4_h: "Gestión de Campañas Publicitarias",
+                s4_p: "Administramos presupuestos en Meta Ads y Google Ads con tarjetas virtuales segregadas por proyecto. Trazabilidad contable total y reporting de rendimiento continuo.",
+                how_tag: "Nuestra forma de operar", how_h: "Cómo trabajamos",
+                p1_h: "Transparencia y Compliance",
+                p1_p: "Operamos bajo estándares RGPD europeos. Sin almacenamiento de datos sensibles de pago, con encriptación SSL en todas las operativas.",
+                p2_h: "Trazabilidad Absoluta",
+                p2_p: "Cada movimiento financiero está justificado, facturado y respaldado. Infraestructura contable sólida orientada a auditoría y fiscalidad europea.",
+                p3_h: "Soporte Multilingüe",
+                p3_p: "Atención en Español, Inglés y Alemán. Preparados para operar en mercados europeos y latinoamericanos sin fricción de idioma.",
+                model_tag: "Modelo de colaboración", model_h: "Alineados con tu éxito",
+                model_p: "Operamos exclusivamente en modelo B2B con <strong class=\"text-[#0B1628]\">management fees</strong> calculados como porcentaje del volumen de negocio administrado. Sin costes fijos inesperados: crecemos cuando vos crecés.",
+                cta_h: "¿Listo para delegar la operativa y escalar?",
+                cta_p: "Contanos tu situación actual. En 48hs te enviamos una propuesta adaptada a tu negocio.",
+                cta_btn1: "Completar formulario de contacto", cta_btn2: "Escribir por email directo",
+                footer_copy: "© 2026 Talaria Digital. Todos los derechos reservados.",
+                footer_legal: "Aviso Legal", footer_privacy: "Política de Privacidad",
+                footer_cookies: "Política de Cookies", footer_terms: "Términos y Condiciones",
+                cookie_text: "Utilizamos cookies técnicas propias para garantizar el correcto funcionamiento del sitio. No utilizamos cookies de terceros ni publicitarias.",
+                cookie_link: "Política de Cookies", cookie_btn: "Entendido"
+            },
+            en: {
+                nav_services: "Services", nav_method: "Methodology", nav_contact: "Contact",
+                hero_tag: "B2B Boutique Agency — Spain · Global",
+                hero_h1a: "The back-office your digital business",
+                hero_h1b: " needs to scale.",
+                hero_p: "We design and implement the operational, financial and technological infrastructure for content creators, personal brands and digital businesses operating in international markets.",
+                hero_cta1: "Request initial consultation",
+                value_h: "While you focus on creating and selling, we manage everything else.",
+                value_p: "We operate as your external operations department: international payments, automations, invoicing and digital presence. Fully traceable, fully EU-compliant.",
+                srv_tag: "Core Services", srv_h: "What we do",
+                s1_h: "International Payment Architectures",
+                s1_p: "We design and implement multi-currency payment systems (EUR, CHF, GBP). We integrate Stripe, BBVA Redsys, Bizum Business and Revolut Business with automated reconciliation and fee settlement.",
+                s2_h: "Operational Automation",
+                s2_p: "We replace manual processes with automated workflows via Make.com and Google Workspace: automatic invoicing, bank reconciliation, periodic reports and real-time alerts.",
+                s3_h: "Digital Presence & Funnels",
+                s3_p: "We build corporate websites and sales funnels optimised for conversion in high-purchasing-power markets (Spain, Switzerland, United Kingdom). Results-driven design.",
+                s4_h: "Advertising Campaign Management",
+                s4_p: "We manage budgets on Meta Ads and Google Ads with virtual cards segregated by project. Full accounting traceability and continuous performance reporting.",
+                how_tag: "Our way of working", how_h: "How we work",
+                p1_h: "Transparency & Compliance",
+                p1_p: "We operate under European GDPR standards. No storage of sensitive payment data, with SSL encryption across all operations.",
+                p2_h: "Absolute Traceability",
+                p2_p: "Every financial movement is justified, invoiced and backed up. Solid accounting infrastructure oriented toward European auditing and taxation.",
+                p3_h: "Multilingual Support",
+                p3_p: "Support in Spanish, English and German. Ready to operate in European and Latin American markets without language friction.",
+                model_tag: "Collaboration model", model_h: "Aligned with your success",
+                model_p: "We operate exclusively in B2B mode with <strong class=\"text-[#0B1628]\">management fees</strong> calculated as a percentage of administered business volume. No unexpected fixed costs: we grow when you grow.",
+                cta_h: "Ready to delegate operations and scale?",
+                cta_p: "Tell us about your current situation. We'll send you a tailored proposal within 48 hours.",
+                cta_btn1: "Fill out contact form", cta_btn2: "Write directly by email",
+                footer_copy: "© 2026 Talaria Digital. All rights reserved.",
+                footer_legal: "Legal Notice", footer_privacy: "Privacy Policy",
+                footer_cookies: "Cookie Policy", footer_terms: "Terms & Conditions",
+                cookie_text: "We use essential technical cookies to ensure the site works correctly. We do not use third-party or advertising cookies.",
+                cookie_link: "Cookie Policy", cookie_btn: "Got it"
+            },
+            de: {
+                nav_services: "Leistungen", nav_method: "Methodik", nav_contact: "Kontakt",
+                hero_tag: "B2B-Boutique-Agentur — Spanien · Global",
+                hero_h1a: "Das Back-Office, das Ihr digitales Unternehmen",
+                hero_h1b: " zum Wachsen braucht.",
+                hero_p: "Wir entwerfen und implementieren die operative, finanzielle und technologische Infrastruktur für Content Creator, Personal Brands und digitale Unternehmen, die in internationalen Märkten tätig sind.",
+                hero_cta1: "Erstberatung anfragen",
+                value_h: "Während Sie sich auf das Erstellen und Verkaufen konzentrieren, kümmern wir uns um alles andere.",
+                value_p: "Wir agieren als Ihre externe Betriebsabteilung: internationale Zahlungen, Automatisierungen, Rechnungsstellung und digitale Präsenz. Vollständig nachverfolgbar, vollständig EU-konform.",
+                srv_tag: "Kernleistungen", srv_h: "Was wir tun",
+                s1_h: "Internationale Zahlungsarchitekturen",
+                s1_p: "Wir konzipieren und implementieren Mehrwährungs-Zahlungssysteme (EUR, CHF, GBP). Wir integrieren Stripe, BBVA Redsys, Bizum Business und Revolut Business mit automatisierter Abstimmung und Honorarabrechnung.",
+                s2_h: "Betriebsautomatisierung",
+                s2_p: "Wir ersetzen manuelle Prozesse durch automatisierte Workflows über Make.com und Google Workspace: automatische Rechnungsstellung, Bankabgleich, periodische Berichte und Echtzeit-Benachrichtigungen.",
+                s3_h: "Digitale Präsenz & Funnels",
+                s3_p: "Wir erstellen Corporate Websites und Verkaufstrichter, optimiert für Konversion in kaufkraftstarken Märkten (Spanien, Schweiz, Vereinigtes Königreich). Ergebnisorientiertes Design.",
+                s4_h: "Werbekampagnen-Management",
+                s4_p: "Wir verwalten Budgets auf Meta Ads und Google Ads mit projektweise getrennten virtuellen Karten. Vollständige buchhalterische Rückverfolgbarkeit und kontinuierliches Performance-Reporting.",
+                how_tag: "Unsere Arbeitsweise", how_h: "Wie wir arbeiten",
+                p1_h: "Transparenz & Compliance",
+                p1_p: "Wir arbeiten nach europäischen DSGVO-Standards. Keine Speicherung sensibler Zahlungsdaten, mit SSL-Verschlüsselung in allen Prozessen.",
+                p2_h: "Absolute Nachverfolgbarkeit",
+                p2_p: "Jede Finanzbewegung ist belegt, fakturiert und gesichert. Solide Buchhaltungsinfrastruktur, ausgerichtet auf europäische Prüfung und Besteuerung.",
+                p3_h: "Mehrsprachiger Support",
+                p3_p: "Betreuung auf Spanisch, Englisch und Deutsch. Bereit für den Betrieb auf europäischen und lateinamerikanischen Märkten ohne Sprachbarrieren.",
+                model_tag: "Kooperationsmodell", model_h: "Im Einklang mit Ihrem Erfolg",
+                model_p: "Wir arbeiten ausschließlich im B2B-Modell mit <strong class=\"text-[#0B1628]\">Management Fees</strong>, berechnet als Prozentsatz des verwalteten Geschäftsvolumens. Keine unerwarteten Fixkosten: Wir wachsen, wenn Sie wachsen.",
+                cta_h: "Bereit, den Betrieb zu delegieren und zu skalieren?",
+                cta_p: "Schildern Sie uns Ihre aktuelle Situation. Innerhalb von 48 Stunden senden wir Ihnen ein maßgeschneidertes Angebot.",
+                cta_btn1: "Kontaktformular ausfüllen", cta_btn2: "Direkt per E-Mail schreiben",
+                footer_copy: "© 2026 Talaria Digital. Alle Rechte vorbehalten.",
+                footer_legal: "Impressum", footer_privacy: "Datenschutzerklärung",
+                footer_cookies: "Cookie-Richtlinie", footer_terms: "AGB",
+                cookie_text: "Wir verwenden technisch notwendige Cookies, um den ordnungsgemäßen Betrieb der Website sicherzustellen. Wir verwenden keine Cookies von Drittanbietern oder zu Werbezwecken.",
+                cookie_link: "Cookie-Richtlinie", cookie_btn: "Verstanden"
+            }
+        };
+
+        function setLang(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[lang] && t[lang][key] !== undefined) {
+                    el.innerHTML = t[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('lang', lang);
+            ['es','en','de'].forEach(l => {
+                const btn = document.getElementById('btn-' + l);
+                if (btn) btn.classList.toggle('active', l === lang);
+            });
+        }
+
+        // Init: cookie banner
         if (localStorage.getItem('cookieAccepted')) {
             document.getElementById('cookie-banner').style.display = 'none';
         }
+
+        // Init: language
+        const savedLang = localStorage.getItem('lang') || 'es';
+        setLang(savedLang);
     </script>
 
 </body>
