@@ -14,5 +14,8 @@ service-account*.json
 .vscode/settings.json
 .idea/
 
+# clasp auth (tokens locales — NO versionar)
+.clasprc.json
+
 # Logs temporales
 *.log
