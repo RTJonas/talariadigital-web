@@ -1,0 +1,18 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Variables de entorno / credenciales
+.env
+*.env
+secrets.json
+credentials.json
+service-account*.json
+
+# IDEs
+.vscode/settings.json
+.idea/
+
+# Logs temporales
+*.log
