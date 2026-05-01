@@ -5,6 +5,16 @@ Formato: `## YYYY-MM-DD — Descripción breve` + detalle de lo hecho.
 
 ---
 
+## 2026-04-26 — Libro Facturas Expedidas (Hacienda)
+
+- Modificada `generarFacturasMensuales()` en `scripts/Code.js` para que al generar cada factura mensual también escriba una fila en la pestaña `Libro Facturas Expedidas`
+- La pestaña se crea automáticamente con sus cabeceras si no existe
+- Lógica de upsert: actualiza la fila si la factura ya estaba registrada (sobreescritura), inserta si es nueva
+- Columnas del libro: Nº Factura, Fecha Emisión, Destinatario, NIF/CUIT, Concepto, Base Imponible, % IVA (0%), Cuota IVA (€0), Total, Observaciones ("No sujeta a IVA — Art. 69 Ley 37/1992")
+- Actualizado `CLAUDE.md` para documentar la nueva pestaña
+
+---
+
 ## 2026-04-06 — Inicialización del repositorio
 
 - Creado repo privado en GitHub: `TalariaDigital-General`

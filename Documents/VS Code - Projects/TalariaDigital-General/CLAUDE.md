@@ -26,6 +26,7 @@ Agencia boutique B2B radicada en España (Pinseque, Zaragoza). Presta servicios 
 - **IVA:** Facturas al 0% (Art. 69 Ley 37/1992) — destinatarios fuera de la UE (Argentina)
 - **IRPF:** Sin retención (destinatario no residente). Internamente se reserva el 20% para Modelo 130 trimestral
 - **Gastos deducibles:** Solo los estrictamente justificados con documento (ej. mobiliario pagado por banco). Sin dietas diarias
+- **Marco legal completo:** Ver `MARCO-LEGAL.md` — leyes que respaldan la operatoria, tratamiento de fondos Bizum, respuestas estándar para requerimientos de Hacienda
 
 ---
 
@@ -41,7 +42,8 @@ Agencia boutique B2B radicada en España (Pinseque, Zaragoza). Presta servicios 
 | `Semanal - Liquidacion` | Panel de control. Datos de creadoras (Col O=ID, Q=Email, S=Nombre, T=CUIT). Historial tipo de cambio en cols K-L |
 | `Historial de Pagos` | Resumen consolidado por liquidación (9 columnas: fecha, ID, bruto, comisión, honorarios, a liquidar, USDT, tasa, reserva hacienda) |
 | `Fondeo Kraken` | Registro de envíos SEPA a Kraken |
-| `Registro Facturas` | Numeración correlativa de facturas |
+| `Registro Facturas` | Numeración correlativa de facturas (uso interno) |
+| `Libro Facturas Expedidas` | **Libro Registro oficial (Hacienda).** Columnas: Nº Factura, Fecha Emisión, Destinatario, NIF/CUIT, Concepto, Base Imponible, % IVA (0%), Cuota IVA (€0), Total, Observaciones. Llenado automáticamente por `generarFacturasMensuales()` |
 
 ### Columnas clave de `Transacciones`
 A=Fecha/Hora, B=Origen/Tipo, C=ID Transacción, D=Email Cliente, E=ID Proveedor, F=Bruto, G=Comisión, H=Neto(fórmula), I=Honorarios(fórmula), J=A Liquidar(fórmula), K=Fecha Liquidación, L=Estado Liquidación, M=USDT
@@ -79,9 +81,11 @@ Todas están en `scripts/talaria-ledger.gs` y activadas por botones en el spread
 
 ## Contratos y KYC
 
-- Contrato firmado con cada creadora
-- Nombre completo + CUIT (Argentina) registrados en la matriz del spreadsheet
+- Contrato Marco firmado con cada creadora vía **DocuSign** (con certificado de firma electrónica, fecha e IP)
+- Cada contrato incluye: nombre completo, DNI argentino, dirección física en Argentina, CUIT, wallet de liquidación
+- Nombre completo + CUIT registrados también en la hoja `Semanal - Liquidacion` (columnas S y T)
 - 3 creadoras activas actualmente (IDs en el spreadsheet)
+- **Naturaleza jurídica:** Talaria actúa como *mandatario en nombre ajeno* (Disclosed Agent) — los fondos brutos pertenecen a las creadoras desde el cobro; solo el 20% es ingreso propio
 
 ---
 
@@ -90,6 +94,7 @@ Todas están en `scripts/talaria-ledger.gs` y activadas por botones en el spread
 ```
 TalariaDigital-General/
 ├── CLAUDE.md                    ← Este archivo (contexto para IA)
+├── MARCO-LEGAL.md               ← Leyes que respaldan la operatoria + Q&A para Hacienda
 ├── DEVLOG.md                    ← Bitácora de cambios diarios
 ├── .gitignore
 ├── Talaria Ledger 2026.ods      ← Copia local del spreadsheet (referencia)
